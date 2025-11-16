@@ -1,5 +1,5 @@
 from app import some_function
 
-if __name__ == '__main__':
+def test_some_function():
     some_var = 7
     assert some_function(7) == some_var
