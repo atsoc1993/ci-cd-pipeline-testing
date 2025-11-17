@@ -1,0 +1,132 @@
+{
+    "name": "TestContract",
+    "structs": {},
+    "methods": [
+        {
+            "name": "create_box",
+            "args": [
+                {
+                    "type": "pay",
+                    "name": "mbr_payment"
+                }
+            ],
+            "returns": {
+                "type": "void"
+            },
+            "actions": {
+                "create": [],
+                "call": [
+                    "NoOp"
+                ]
+            },
+            "readonly": false,
+            "events": [],
+            "recommendations": {}
+        }
+    ],
+    "arcs": [
+        22,
+        28
+    ],
+    "networks": {},
+    "state": {
+        "schema": {
+            "global": {
+                "ints": 0,
+                "bytes": 1
+            },
+            "local": {
+                "ints": 0,
+                "bytes": 0
+            }
+        },
+        "keys": {
+            "global": {
+                "global_counter": {
+                    "keyType": "AVMString",
+                    "valueType": "uint64",
+                    "key": "Z2xvYmFsX2NvdW50ZXI="
+                }
+            },
+            "local": {},
+            "box": {}
+        },
+        "maps": {
+            "global": {},
+            "local": {},
+            "box": {
+                "test_box_map": {
+                    "keyType": "address",
+                    "valueType": "uint64",
+                    "prefix": ""
+                }
+            }
+        }
+    },
+    "bareActions": {
+        "create": [
+            "NoOp"
+        ],
+        "call": []
+    },
+    "sourceInfo": {
+        "approval": {
+            "sourceInfo": [
+                {
+                    "pc": [
+                        75
+                    ],
+                    "errorMessage": "OnCompletion must be NoOp && can only call when creating"
+                },
+                {
+                    "pc": [
+                        64
+                    ],
+                    "errorMessage": "OnCompletion must be NoOp && can only call when not creating"
+                },
+                {
+                    "pc": [
+                        92,
+                        113
+                    ],
+                    "errorMessage": "account funded"
+                },
+                {
+                    "pc": [
+                        96
+                    ],
+                    "errorMessage": "check self.global_counter exists"
+                },
+                {
+                    "pc": [
+                        87
+                    ],
+                    "errorMessage": "transaction type is pay"
+                }
+            ],
+            "pcOffsetMethod": "none"
+        },
+        "clear": {
+            "sourceInfo": [],
+            "pcOffsetMethod": "none"
+        }
+    },
+    "source": {
+        "approval": "I3ByYWdtYSB2ZXJzaW9uIDExCiNwcmFnbWEgdHlwZXRyYWNrIGZhbHNlCgovLyBhbGdvcHkuYXJjNC5BUkM0Q29udHJhY3QuYXBwcm92YWxfcHJvZ3JhbSgpIC0+IHVpbnQ2NDoKbWFpbjoKICAgIGludGNibG9jayAxIDAKICAgIGJ5dGVjYmxvY2sgImdsb2JhbF9jb3VudGVyIgogICAgdHhuIEFwcGxpY2F0aW9uSUQKICAgIGJueiBtYWluX2FmdGVyX2lmX2Vsc2VAMgogICAgLy8gY29udHJhY3QucHk6MTgKICAgIC8vIHNlbGYuZ2xvYmFsX2NvdW50ZXIgPSBhcmM0LlVJbnQ2NCgwKQogICAgYnl0ZWNfMCAvLyAiZ2xvYmFsX2NvdW50ZXIiCiAgICBwdXNoYnl0ZXMgMHgwMDAwMDAwMDAwMDAwMDAwCiAgICBhcHBfZ2xvYmFsX3B1dAoKbWFpbl9hZnRlcl9pZl9lbHNlQDI6CiAgICAvLyBjb250cmFjdC5weToxNgogICAgLy8gY2xhc3MgVGVzdENvbnRyYWN0KEFSQzRDb250cmFjdCk6CiAgICB0eG4gTnVtQXBwQXJncwogICAgYnogbWFpbl9fX2FsZ29weV9kZWZhdWx0X2NyZWF0ZUA3CiAgICBwdXNoYnl0ZXMgMHgwZGY1OGRlMCAvLyBtZXRob2QgImNyZWF0ZV9ib3gocGF5KXZvaWQiCiAgICB0eG5hIEFwcGxpY2F0aW9uQXJncyAwCiAgICBtYXRjaCBtYWluX2NyZWF0ZV9ib3hfcm91dGVANQogICAgZXJyCgptYWluX2NyZWF0ZV9ib3hfcm91dGVANToKICAgIC8vIGNvbnRyYWN0LnB5OjIxCiAgICAvLyBAYWJpbWV0aG9kCiAgICB0eG4gT25Db21wbGV0aW9uCiAgICAhCiAgICB0eG4gQXBwbGljYXRpb25JRAogICAgJiYKICAgIGFzc2VydCAvLyBPbkNvbXBsZXRpb24gbXVzdCBiZSBOb09wICYmIGNhbiBvbmx5IGNhbGwgd2hlbiBub3QgY3JlYXRpbmcKICAgIGIgY3JlYXRlX2JveAoKbWFpbl9fX2FsZ29weV9kZWZhdWx0X2NyZWF0ZUA3OgogICAgdHhuIE9uQ29tcGxldGlvbgogICAgIQogICAgdHhuIEFwcGxpY2F0aW9uSUQKICAgICEKICAgICYmCiAgICBhc3NlcnQgLy8gT25Db21wbGV0aW9uIG11c3QgYmUgTm9PcCAmJiBjYW4gb25seSBjYWxsIHdoZW4gY3JlYXRpbmcKICAgIGludGNfMCAvLyAxCiAgICByZXR1cm4KCgovLyBjb250cmFjdC5UZXN0Q29udHJhY3QuY3JlYXRlX2JveFtyb3V0aW5nXSgpIC0+IHZvaWQ6CmNyZWF0ZV9ib3g6CiAgICAvLyBjb250cmFjdC5weToyMQogICAgLy8gQGFiaW1ldGhvZAogICAgdHhuIEdyb3VwSW5kZXgKICAgIGludGNfMCAvLyAxCiAgICAtCiAgICBkdXAKICAgIGd0eG5zIFR5cGVFbnVtCiAgICBpbnRjXzAgLy8gcGF5CiAgICA9PQogICAgYXNzZXJ0IC8vIHRyYW5zYWN0aW9uIHR5cGUgaXMgcGF5CiAgICAvLyBjb250cmFjdC5weTo3CiAgICAvLyByZXR1cm4gR2xvYmFsLmN1cnJlbnRfYXBwbGljYXRpb25fYWRkcmVzcy5taW5fYmFsYW5jZQogICAgZ2xvYmFsIEN1cnJlbnRBcHBsaWNhdGlvbkFkZHJlc3MKICAgIGFjY3RfcGFyYW1zX2dldCBBY2N0TWluQmFsYW5jZQogICAgYXNzZXJ0IC8vIGFjY291bnQgZnVuZGVkCiAgICAvLyBjb250cmFjdC5weToyNAogICAgLy8gc2VsZi50ZXN0X2JveF9tYXBbVHhuLnNlbmRlcl0gPSBzZWxmLmdsb2JhbF9jb3VudGVyCiAgICBpbnRjXzEgLy8gMAogICAgYnl0ZWNfMCAvLyAiZ2xvYmFsX2NvdW50ZXIiCiAgICBhcHBfZ2xvYmFsX2dldF9leAogICAgYXNzZXJ0IC8vIGNoZWNrIHNlbGYuZ2xvYmFsX2NvdW50ZXIgZXhpc3RzCiAgICB0eG4gU2VuZGVyCiAgICBkaWcgMQogICAgYm94X3B1dAogICAgLy8gY29udHJhY3QucHk6MzEKICAgIC8vIHNlbGYuZ2xvYmFsX2NvdW50ZXIgPSBhcmM0LlVJbnQ2NChzZWxmLmdsb2JhbF9jb3VudGVyLmFzX3VpbnQ2NCgpICsgMSkKICAgIGJ0b2kKICAgIGludGNfMCAvLyAxCiAgICArCiAgICBpdG9iCiAgICBieXRlY18wIC8vICJnbG9iYWxfY291bnRlciIKICAgIHN3YXAKICAgIGFwcF9nbG9iYWxfcHV0CiAgICAvLyBjb250cmFjdC5weTo3CiAgICAvLyByZXR1cm4gR2xvYmFsLmN1cnJlbnRfYXBwbGljYXRpb25fYWRkcmVzcy5taW5fYmFsYW5jZQogICAgZ2xvYmFsIEN1cnJlbnRBcHBsaWNhdGlvbkFkZHJlc3MKICAgIGFjY3RfcGFyYW1zX2dldCBBY2N0TWluQmFsYW5jZQogICAgYXNzZXJ0IC8vIGFjY291bnQgZnVuZGVkCiAgICAvLyBjb250cmFjdC5weToyNwogICAgLy8gcmVmdW5kX2V4Y2Vzc19tYnIobWJyX3BheW1lbnQuYW1vdW50IC0gKHBvc3RfbWJyIC0gcHJlX21icikpCiAgICB1bmNvdmVyIDIKICAgIGd0eG5zIEFtb3VudAogICAgc3dhcAogICAgdW5jb3ZlciAyCiAgICAtCiAgICAtCiAgICAvLyBjb250cmFjdC5weToxMS0xNAogICAgLy8gaXR4bi5QYXltZW50KAogICAgLy8gICAgIHJlY2VpdmVyPVR4bi5zZW5kZXIsCiAgICAvLyAgICAgYW1vdW50PWV4Y2VzcwogICAgLy8gKS5zdWJtaXQoKQogICAgaXR4bl9iZWdpbgogICAgLy8gY29udHJhY3QucHk6MTIKICAgIC8vIHJlY2VpdmVyPVR4bi5zZW5kZXIsCiAgICB0eG4gU2VuZGVyCiAgICBpdHhuX2ZpZWxkIFJlY2VpdmVyCiAgICBpdHhuX2ZpZWxkIEFtb3VudAogICAgLy8gY29udHJhY3QucHk6MTEKICAgIC8vIGl0eG4uUGF5bWVudCgKICAgIGludGNfMCAvLyBwYXkKICAgIGl0eG5fZmllbGQgVHlwZUVudW0KICAgIGludGNfMSAvLyAwCiAgICBpdHhuX2ZpZWxkIEZlZQogICAgLy8gY29udHJhY3QucHk6MTEtMTQKICAgIC8vIGl0eG4uUGF5bWVudCgKICAgIC8vICAgICByZWNlaXZlcj1UeG4uc2VuZGVyLAogICAgLy8gICAgIGFtb3VudD1leGNlc3MKICAgIC8vICkuc3VibWl0KCkKICAgIGl0eG5fc3VibWl0CiAgICAvLyBjb250cmFjdC5weToyMQogICAgLy8gQGFiaW1ldGhvZAogICAgaW50Y18wIC8vIDEKICAgIHJldHVybgo=",
+        "clear": "I3ByYWdtYSB2ZXJzaW9uIDExCiNwcmFnbWEgdHlwZXRyYWNrIGZhbHNlCgovLyBhbGdvcHkuYXJjNC5BUkM0Q29udHJhY3QuY2xlYXJfc3RhdGVfcHJvZ3JhbSgpIC0+IHVpbnQ2NDoKbWFpbjoKICAgIHB1c2hpbnQgMSAvLyAxCiAgICByZXR1cm4K"
+    },
+    "byteCode": {
+        "approval": "CyACAQAmAQ5nbG9iYWxfY291bnRlcjEYQAAMKIAIAAAAAAAAAABnMRtBABiABA31jeA2GgCOAQABADEZFDEYEERCAAoxGRQxGBQQRCJDMRYiCUk4ECISRDIKcwFEIyhlRDEASwG/FyIIFihMZzIKcwFETwI4CExPAgkJsTEAsgeyCCKyECOyAbMiQw==",
+        "clear": "C4EBQw=="
+    },
+    "compilerInfo": {
+        "compiler": "puya",
+        "compilerVersion": {
+            "major": 5,
+            "minor": 4,
+            "patch": 0
+        }
+    },
+    "events": [],
+    "templateVariables": {}
+}
